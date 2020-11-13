@@ -3,7 +3,7 @@
         <input *ngIf="item.type === 'folder'" type="checkbox">
         <span [class]="item.type">
             {{item.name}}
-            <span class="count" *ngIf="item.type === 'folder' && item.children"> ({{item.children.length}})</span>
+            <span class="count" *ngIf="item.type === 'folder' && item.children"> ({{countFiles(item.children)}})</span>
         </span>
         <app-node *ngIf="item.type === 'folder'" [listItems]="item.children || []"></app-node>
     </li>
