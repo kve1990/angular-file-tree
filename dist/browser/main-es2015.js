@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ul [class.tree]=\"root\">\n    <li *ngFor=\"let item of listItems\">\n        <input *ngIf=\"item.type === 'folder'\" type=\"checkbox\">\n        <span [class]=\"item.type\">\n            {{item.name}}\n            <span class=\"count\" *ngIf=\"item.type === 'folder' && item.children\"> ({{item.children.length}})</span>\n        </span>\n        <app-node *ngIf=\"item.type === 'folder'\" [listItems]=\"item.children || []\"></app-node>\n    </li>\n</ul>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ul [class.tree]=\"root\">\n    <li *ngFor=\"let item of listItems\">\n        <input *ngIf=\"item.type === 'folder'\" type=\"checkbox\">\n        <span [class]=\"item.type\">\n            {{item.name}}\n            <span class=\"count\" *ngIf=\"item.type === 'folder' && item.children\"> ({{countFiles(item.children)}})</span>\n        </span>\n        <app-node *ngIf=\"item.type === 'folder'\" [listItems]=\"item.children || []\"></app-node>\n    </li>\n</ul>");
 
 /***/ }),
 
@@ -197,6 +197,17 @@ let NodeComponent = class NodeComponent {
             }
         });
     }
+    countFiles(items) {
+        return items.reduce((count, item) => {
+            if (item.type === 'file') {
+                return ++count;
+            }
+            if (item.type === 'folder' && item.children && item.children.length) {
+                return count + this.countFiles(item.children);
+            }
+            return count;
+        }, 0);
+    }
 };
 Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
@@ -238,22 +249,9 @@ module.exports = JSON.parse("{\"tree\":[{\"name\":\"Pictures\",\"type\":\"folder
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
 const environment = {
-    production: false,
-    apiKey: "AIzaSyDtMmEXGk5t3NHAuwBUE2WxvNvAXtNhwmE",
-    dbUrl: "https://online-shop-a7d93.firebaseio.com/"
+    production: false
 };
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 
 /***/ }),
