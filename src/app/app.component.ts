@@ -1,16 +1,26 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {INode} from './INode';
-import data from '../assets/files/data.json';
+import { DataService } from './data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent{
+export class AppComponent implements OnInit, OnDestroy{
 
-  public listItems: INode[] = data.tree || [];
+  public listItems: INode[];
+  public subs: Subscription;
 
-  constructor() {
+  constructor(private dataService: DataService) {
+  }
+
+  ngOnInit() {
+    this.subs = this.dataService.getData().subscribe(list => this.listItems = list['tree']);
+  }
+
+  ngOnDestroy() {
+    this.subs.unsubscribe();
   }
 }

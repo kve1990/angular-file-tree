@@ -1,4 +1,4 @@
 <div class="container">
-  <app-node [listItems]="listItems" [root]="true"></app-node>
+  <app-node *ngIf="listItems && listItems.length" [listItems]="listItems" [root]="true"></app-node>
 </div>
 

@@ -1,9 +1,7 @@
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
 import { NodeComponent } from './node/node.component';
 import { CountFilesPipe } from './count-files.pipe';
 
@@ -15,9 +13,7 @@ import { CountFilesPipe } from './count-files.pipe';
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'app-root'}),
-        ReactiveFormsModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-        FormsModule,
+        HttpClientModule
     ],
   bootstrap: [AppComponent]
 })

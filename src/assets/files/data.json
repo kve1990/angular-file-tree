@@ -6,10 +6,16 @@
             "name": "Family",
             "type": "folder",
             "children": [{
-                "name": "file1.jpg",
+                "name": "file7.jpg",
                 "type": "file"
             }, {
                 "name": "file2.jpg",
+                "type": "file"
+            }, {
+                "name": "file2.jpg",
+                "type": "file"
+            }, {
+                "name": "file8.jpg",
                 "type": "file"
             }, {
                 "name": "file3.jpg",
@@ -31,7 +37,15 @@
             "children": [{
                     "name": "Temporary",
                     "type": "folder",
-                    "children": []
+                    "children": [
+                        {
+                            "name": "doc2.docx",
+                            "type": "file"
+                        }, {
+                            "name": "doc3.docx",
+                            "type": "file"
+                        }
+                    ]
                 },
                 {
                     "name": "document9.docx",
@@ -64,6 +78,18 @@
                 "type": "file"
             }]
         }]
+    }, {
+        "name": "Temporary",
+        "type": "folder",
+        "children": [
+            {
+                "name": "doc8.docx",
+                "type": "file"
+            }, {
+                "name": "doc3.docx",
+                "type": "file"
+            }
+        ]
     }, {
         "name": "Games",
         "type": "folder",
