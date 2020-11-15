@@ -15,7 +15,7 @@ export class NodeComponent implements OnInit {
   constructor(public sortService: SortService) { }
 
   ngOnInit(): void {
-    this.sortService.sortItems(this.listItems);
+    this.listItems = this.sortService.sortItems([...this.listItems]);
   }
 
 }

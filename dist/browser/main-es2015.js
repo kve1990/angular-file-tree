@@ -83,7 +83,7 @@ let AppComponent = class AppComponent {
         this.dataService = dataService;
     }
     ngOnInit() {
-        this.subs = this.dataService.getData().subscribe(list => this.listItems = list['tree']);
+        this.subs = this.dataService.getData().subscribe(list => this.listItems = list);
     }
     ngOnDestroy() {
         this.subs.unsubscribe();
@@ -199,6 +199,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm2015/operators/index.js");
+
 
 
 
@@ -208,7 +210,7 @@ let DataService = class DataService {
         this.http = http;
     }
     getData() {
-        return this.http.get(DataUrl);
+        return this.http.get(DataUrl).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(data => data['tree']));
     }
 };
 DataService.ctorParameters = () => [
@@ -258,7 +260,7 @@ let NodeComponent = class NodeComponent {
         this.sortService = sortService;
     }
     ngOnInit() {
-        this.sortService.sortItems(this.listItems);
+        this.listItems = this.sortService.sortItems([...this.listItems]);
     }
 };
 NodeComponent.ctorParameters = () => [

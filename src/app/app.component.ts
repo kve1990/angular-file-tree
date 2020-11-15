@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit() {
-    this.subs = this.dataService.getData().subscribe(list => this.listItems = list['tree']);
+    this.subs = this.dataService.getData().subscribe(list => this.listItems = list);
   }
 
   ngOnDestroy() {
