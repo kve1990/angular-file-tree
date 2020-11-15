@@ -17,13 +17,13 @@
     exports = ___CSS_LOADER_API_IMPORT___(true);
     exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto);"]); // Module
 
-    exports.push([module.i, "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: 'Roboto', sans-serif;\n  font-size: 1rem;\n  line-height: 1.6;\n  background-color: #fff;\n  color: #333;\n}\n\nul {\n  list-style: none;\n}\n", "", {
+    exports.push([module.i, "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: 'Roboto', sans-serif;\n  font-size: 1rem;\n  line-height: 1.6;\n  background-color: #fff;\n  color: #333;\n}\n\nul {\n  list-style: none;\n}\n\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 15px;\n}\n", "", {
       "version": 3,
       "sources": ["styles.css"],
       "names": [],
-      "mappings": "AAEA;EACE,sBAAsB;EACtB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,iCAAiC;EACjC,eAAe;EACf,gBAAgB;EAChB,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,gBAAgB;AAClB",
+      "mappings": "AAEA;EACE,sBAAsB;EACtB,SAAS;EACT,UAAU;AACZ;;AAEA;EACE,iCAAiC;EACjC,eAAe;EACf,gBAAgB;EAChB,sBAAsB;EACtB,WAAW;AACb;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,iBAAiB;EACjB,cAAc;EACd,aAAa;AACf",
       "file": "styles.css",
-      "sourcesContent": ["@import url('https://fonts.googleapis.com/css?family=Roboto');\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: 'Roboto', sans-serif;\n  font-size: 1rem;\n  line-height: 1.6;\n  background-color: #fff;\n  color: #333;\n}\n\nul {\n  list-style: none;\n}\n"]
+      "sourcesContent": ["@import url('https://fonts.googleapis.com/css?family=Roboto');\n\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: 'Roboto', sans-serif;\n  font-size: 1rem;\n  line-height: 1.6;\n  background-color: #fff;\n  color: #333;\n}\n\nul {\n  list-style: none;\n}\n\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 15px;\n}\n"]
     }]); // Exports
 
     module.exports = exports;
