@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {INode} from '../INode';
+import { Component, Input, OnInit } from '@angular/core';
+import { INode } from '../INode';
 import { SortService } from '../sort.service';
 
 @Component({

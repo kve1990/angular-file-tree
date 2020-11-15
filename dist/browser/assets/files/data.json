@@ -79,6 +79,18 @@
             }]
         }]
     }, {
+        "name": "Что-то на русском",
+        "type": "folder",
+        "children": [
+            {
+                "name": "документ7.docx",
+                "type": "file"
+            }, {
+                "name": "документ4.docx",
+                "type": "file"
+            }
+        ]
+    }, {
         "name": "Temporary",
         "type": "folder",
         "children": [

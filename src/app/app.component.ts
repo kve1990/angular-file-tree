@@ -1,5 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {INode} from './INode';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { INode } from './INode';
 import { DataService } from './data.service';
 import { Subscription } from 'rxjs';
 
