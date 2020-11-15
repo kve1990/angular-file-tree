@@ -40,15 +40,4 @@ export class NodeComponent implements OnInit {
     });
   }
 
-  countFiles(items: INode[]): number {
-    return items.reduce((count, item) => {
-      if (item.type === 'file') {
-        return ++count;
-      }
-      if (item.type === 'folder' && item.children && item.children.length) {
-        return count + this.countFiles(item.children);
-      }
-      return count;
-    }, 0);
-  }
 }

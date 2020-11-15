@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NodeComponent } from './node/node.component';
+import { CountFilesPipe } from './count-files.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NodeComponent
+    NodeComponent,
+    CountFilesPipe
   ],
     imports: [
         BrowserModule.withServerTransition({appId: 'app-root'}),
